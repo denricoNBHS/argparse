@@ -1,11 +1,14 @@
 import argparse
-from statistics import mean, median
+from statistics import mean, median, stdev
 
-""" 
-Write a command line tool that accepts a list of (one or more) 
-numbers and returns their mean by default or, if the '-m' or '--median'
-options are included, their median instead.
 
-The mean and median functions from the statistics module have been
-included for you.
-"""
+parser = argparse.ArgumentParser(description='Calculates central tendency of a list.')
+parser.add_argument('data', type=float, metavar='N', nargs='+', help='numeric data')
+parser.add_argument('--median', action='store_true')
+
+args = parser.parse_args()
+
+print(f"data: {args.data}")
+if args.median == True:
+	print(f"median: {median(args.data)}")
+
