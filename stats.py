@@ -16,5 +16,4 @@ elif args.mean == True:
         print(f"mean: {mean(args.data)}")
 elif args.stdev == True:
         print(f"Standard Deviation: {stdev(args.data)}")
-else:
-    print(args.data)
+
